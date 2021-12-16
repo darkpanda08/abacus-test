@@ -1,0 +1,75 @@
+<mat-card>
+    <mat-card-title>Create Test</mat-card-title>
+    <mat-spinner *ngIf="isLoading"></mat-spinner>
+    <form (submit)="onCreateTest(testForm)" #testForm="ngForm" *ngIf="!isLoading">
+        <mat-form-field appearance="outline">
+            <mat-label>Test Name</mat-label>
+            <input matInput type="text" placeholder="Test Name" name="testName" ngModel #testNameinput="ngModel" required>
+            <mat-error *ngIf="testNameinput.invalid">Please enter a valid test name.</mat-error>
+        </mat-form-field>
+
+        <fieldset class="test-param">
+            <legend>Test Parameters:</legend>
+            <mat-form-field appearance="outline">
+                <mat-label>No. of Questions</mat-label>
+                <input matInput type="number" placeholder="No. of Questions" name="questions" ngModel #questionsinput="ngModel" required>
+                <mat-error *ngIf="questionsinput.invalid">Please enter a valid input.</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>No. of Rows</mat-label>
+                <input matInput type="number" placeholder="No. of Rows" name="rows" ngModel #rowsinput="ngModel" required>
+                <mat-error *ngIf="rowsinput.invalid">Please enter a valid valid input.</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>1 Digit</mat-label>
+                <input matInput type="number" placeholder="1 Digit" name="oneDigit" ngModel #oneDigitinput="ngModel" required>
+                <mat-error *ngIf="oneDigitinput.invalid">Please enter a valid valid input.</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>2 Digit</mat-label>
+                <input matInput type="number" placeholder="2 Digit" name="twoDigit" ngModel #twoDigitinput="ngModel" required>
+                <mat-error *ngIf="twoDigitinput.invalid">Please enter a valid valid input.</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>3 Digit</mat-label>
+                <input matInput type="number" placeholder="3 Digit" name="threeDigit" ngModel #threeDigitinput="ngModel" required>
+                <mat-error *ngIf="threeDigitinput.invalid">Please enter a valid valid input.</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Operation</mat-label>
+                <mat-select name="operation" ngModel #operationinput="ngModel" required>
+                    <mat-option>None</mat-option>
+                    <mat-option value="add">Addition</mat-option>
+                    <mat-option value="subtract">Subtraction</mat-option>
+                    <mat-option value="multiply">Multiplication</mat-option>
+                </mat-select>
+                <mat-error *ngIf="operationinput.invalid">Please select a valid operation.</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Negative Digits</mat-label>
+                <input matInput type="number" placeholder="Negative Digits" name="negative" ngModel #negativeinput="ngModel" required>
+                <mat-error *ngIf="negativeinput.invalid">Please enter a valid valid input.</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Positive Digits</mat-label>
+                <input matInput type="number" placeholder="Positive Digits" name="positive" ngModel #positiveinput="ngModel" required>
+                <mat-error *ngIf="positiveinput.invalid">Please enter a valid valid input.</mat-error>
+            </mat-form-field>
+        </fieldset>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Test Description</mat-label>
+            <input matInput type="text" placeholder="Test Description" name="testDescription" ngModel #testDescriptioninput="ngModel" required>
+            <mat-error *ngIf="testDescriptioninput.invalid">Please enter a valid Test Description.</mat-error>
+        </mat-form-field>
+
+        <button mat-raised-button color="accent" type="button">Create Test</button>
+    </form>
+</mat-card>

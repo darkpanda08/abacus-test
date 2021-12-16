@@ -1,0 +1,11 @@
+<main>
+    <h1>Abacus Trainer for Kids</h1>
+    <p>Welcome to the part of the internet that helps train your math muscles.</p>
+    <p>Come lets practice Abacus</p>
+</main>
+
+<div class="center_btns">
+    <button mat-raised-button color="accent" *ngIf="!userIsAuthenticated" (click)="onLoginClick()">Login</button>
+    <button mat-raised-button color="accent" *ngIf="!userIsAuthenticated" (click)="onSignupClick()">Signup</button>
+    <button mat-raised-button color="accent" *ngIf="userIsAuthenticated" (click)="onStartClick()">Start</button>
+</div>

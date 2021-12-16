@@ -1,0 +1,32 @@
+<mat-card>
+    <mat-card-title>My Profile</mat-card-title>
+    <mat-spinner *ngIf="isLoading"></mat-spinner>
+    <mat-card-content *ngIf="!isLoading">
+        <mat-list>
+            <mat-list-item>
+                <mat-icon mat-list-icon>person</mat-icon>
+                <h4 mat-line><b>Name:</b> {{ name }}</h4>
+            </mat-list-item>
+            <mat-list-item *ngIf="!userIsAdmin">
+                <mat-icon mat-list-icon>supervisor_account</mat-icon>
+                <h4 mat-line><b>Age:</b> {{ age }}</h4>
+            </mat-list-item>
+            <mat-list-item>
+                <mat-icon mat-list-icon>email</mat-icon>
+                <h4 mat-line><b>Email:</b> {{ email }}</h4>
+            </mat-list-item>
+            <mat-list-item>
+                <mat-icon mat-list-icon>school</mat-icon>
+                <h4 mat-line><b>School Name:</b> {{ school }}</h4>
+            </mat-list-item>
+            <mat-list-item *ngIf="userIsAdmin">
+                <mat-icon mat-list-icon>local_library</mat-icon>
+                <h4 mat-line><b>Role:</b> Teacher</h4>
+            </mat-list-item>
+            <mat-list-item *ngIf="!userIsAdmin">
+                <mat-icon mat-list-icon>book</mat-icon>
+                <h4 mat-line><b>Role:</b> Student</h4>
+            </mat-list-item>
+        </mat-list>
+    </mat-card-content>
+</mat-card>

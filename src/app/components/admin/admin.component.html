@@ -1,0 +1,35 @@
+<mat-card>
+    <mat-spinner *ngIf="isLoading"></mat-spinner>
+    <mat-card-title>Admin Panel</mat-card-title>
+    <mat-card-content>
+        <mat-list>
+            <mat-list-item>
+                <a mat-list-item [routerLink]="['/admin/users']">
+                    <mat-icon mat-list-icon>people</mat-icon>
+                    <h4 mat-line>Users</h4>
+                </a>
+            </mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item>
+                <a mat-list-item [routerLink]="['/admin/create']">
+                    <mat-icon mat-list-icon>book</mat-icon>
+                    <h4 mat-line>Create Test</h4>
+                </a>
+            </mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item>
+                <a mat-list-item [routerLink]="['/admin/assign']">
+                    <mat-icon mat-list-icon>quiz</mat-icon>
+                    <h4 mat-line>Assign test</h4>
+                </a>
+            </mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item>
+                <a mat-list-item [routerLink]="['/admin/analytics']">
+                    <mat-icon mat-list-icon>leaderboard</mat-icon>
+                    <h4 mat-line>View Analytics</h4>
+                </a>
+            </mat-list-item>
+        </mat-list>
+    </mat-card-content>
+</mat-card>

@@ -1,0 +1,10 @@
+<mat-spinner *ngIf="isLoading && !fetchedTest"></mat-spinner>
+
+<div *ngIf="!fetchedTest" class="main-empty">
+    <h1>Test not found</h1>
+</div>
+
+<div *ngIf="fetchedTest" class="main">
+    <h1>{{ fetchedTest.name }}</h1>
+    <p>{{ fetchedTest.description }}</p>
+</div>

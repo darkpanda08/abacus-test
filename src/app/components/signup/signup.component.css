@@ -1,0 +1,38 @@
+:host {
+    display: block;
+    margin-top: 1rem;
+}
+
+mat-form-field {
+    width: 100%;
+    margin-top: 1rem;
+}
+
+mat-spinner {
+    margin: auto;
+}
+
+mat-card {
+    margin: auto;
+    width: 50%;
+}
+
+mat-card-title {
+    margin-top: 1rem;
+    text-align: center;
+}
+
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+.submit_btn {
+    margin-top: 1rem;
+    width: 100%;
+    padding: auto;
+}

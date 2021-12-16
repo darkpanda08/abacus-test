@@ -1,0 +1,14 @@
+<mat-spinner *ngIf="isLoading"></mat-spinner>
+<mat-accordion multi="true" *ngIf="fetchedTests.length > 0 && !isLoading">
+    <mat-expansion-panel *ngFor="let test of fetchedTests">
+        <mat-expansion-panel-header>
+            {{ test.name }}
+        </mat-expansion-panel-header>
+        <p>{{ test.description }}</p>
+        <mat-action-row>
+            <button mat-button color="warn" (click)="onStartTest(test.id)">START TEST</button>
+        </mat-action-row>
+    </mat-expansion-panel>
+</mat-accordion>
+
+<p class="info-text mat-body-1" *ngIf="fetchedTests.length <= 0 && !isLoading">No new tests available now!</p>

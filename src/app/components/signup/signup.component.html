@@ -1,0 +1,51 @@
+<mat-card>
+    <mat-card-title>Signup</mat-card-title>
+    <mat-spinner *ngIf="isLoading"></mat-spinner>
+    <form (submit)="onSignup(loginForm)" #loginForm="ngForm" *ngIf="!isLoading">
+        <mat-form-field>
+            <mat-label>Signup as:</mat-label>
+            <mat-select [(value)]="selected" (selectionChange)="onChange()" name="role" ngModel #roleinput="ngModel" required>
+                <mat-option>None</mat-option>
+                <mat-option value="student">Student</mat-option>
+                <mat-option value="teacher">Teacher</mat-option>
+            </mat-select>
+            <mat-error *ngIf="roleinput.invalid">Please select a role from from dropdown.</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput type="text" placeholder="Name" name="name" ngModel #nameinput="ngModel" required>
+            <mat-error *ngIf="nameinput.invalid">Please enter a valid text.</mat-error>
+        </mat-form-field>
+
+        <mat-form-field *ngIf="isStudent">
+            <input matInput type="number" placeholder="Age" name="age" ngModel #ageinput="ngModel" [required]="isStudent">
+            <mat-error *ngIf="ageinput.invalid">Please enter a valid age.</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput type="text" placeholder="School Name" name="school" ngModel #schoolinput="ngModel" required>
+            <mat-error *ngIf="schoolinput.invalid">Please enter a valid School Name.</mat-error>
+        </mat-form-field>
+
+        <mat-form-field *ngIf="isStudent">
+            <input matInput type="text" placeholder="Abacus Teacher (Optional)" name="teacher" ngModel #teacherinput="ngModel">
+            <mat-error *ngIf="teacherinput.invalid">Please enter a valid text.</mat-error>
+        </mat-form-field>
+
+        <mat-form-field *ngIf="isStudent">
+            <input matInput type="text" placeholder="Abacus Level (Optional)" name="level" ngModel #levelinput="ngModel">
+            <mat-error *ngIf="levelinput.invalid">Please enter a valid abacus level.</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput type="email" placeholder="Email" name="email" ngModel #emailinput="ngModel" required email>
+            <mat-error *ngIf="emailinput.invalid">Please enter a valid email.</mat-error>
+        </mat-form-field>
+        
+        <mat-form-field>
+            <input matInput type="password" placeholder="Password" name="password" ngModel #passwordinput="ngModel" required>
+            <mat-error *ngIf="passwordinput.invalid">Please enter a valid password.</mat-error>
+        </mat-form-field>
+        <button mat-raised-button color="primary" class="submit_btn" type="submit" *ngIf="!isLoading">Signup</button>
+    </form>
+</mat-card>

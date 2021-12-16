@@ -1,0 +1,11 @@
+<mat-card>
+    <mat-card-title>Students List</mat-card-title>
+    <mat-spinner *ngIf="isLoading"></mat-spinner>
+    <mat-card-content *ngIf="usersList.length > 0 && !isLoading">
+        <mat-selection-list>
+            <mat-nav-list *ngFor="let user of usersList">
+                <a mat-list-item> {{ user.name }}</a>
+            </mat-nav-list>
+        </mat-selection-list>
+    </mat-card-content>
+</mat-card>

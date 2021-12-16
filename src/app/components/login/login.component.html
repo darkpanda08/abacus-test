@@ -1,0 +1,26 @@
+<mat-card>
+    <mat-card-title>Login</mat-card-title>
+    <mat-spinner *ngIf="isLoading"></mat-spinner>
+    <form (submit)="onLogin(loginForm)" #loginForm="ngForm" *ngIf="!isLoading">
+        <mat-form-field>
+            <mat-label>Login as:</mat-label>
+            <mat-select [(value)]="selected" (selectionChange)="onChange()" name="role" ngModel #roleinput="ngModel" required>
+                <mat-option>None</mat-option>
+                <mat-option value="student">Student</mat-option>
+                <mat-option value="teacher">Teacher</mat-option>
+            </mat-select>
+            <mat-error *ngIf="roleinput.invalid">Please select a role from from dropdown.</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput type="email" placeholder="Email" name="email" ngModel #emailinput="ngModel" required email>
+            <mat-error *ngIf="emailinput.invalid">Please enter a valid email.</mat-error>
+        </mat-form-field>
+        
+        <mat-form-field>
+            <input matInput type="password" placeholder="Password" name="password" ngModel #passwordinput="ngModel" required>
+            <mat-error *ngIf="passwordinput.invalid">Please enter a valid password.</mat-error>
+        </mat-form-field>
+        <button mat-raised-button color="primary" class="submit_btn" type="submit" *ngIf="!isLoading">Login</button>
+    </form>
+</mat-card>
